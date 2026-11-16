@@ -4621,11 +4621,11 @@
     },
     {
       "name": "linux-firmware",
-      "version": "20260810",
-      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/linux-firmware/linux-firmware-20260810.tar.xz/sha512/2ef755194eb022e539aa677474ca5c6c8c3616b3302ebc14e1698c62ccb6ba6f8149e507b46c2a0563297c53502defb892ce4d37eb02646d99d955ae899eebe7/linux-firmware-20260810.tar.xz",
-      "filename": "linux-firmware-20260810.tar.xz",
+      "version": "20261019",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/linux-firmware/linux-firmware-20261019.tar.xz/sha512/725bfcc57def709e43dcd89683e1a663c2d221e3d34da58ffcbf8af3b9c6da2b763739ec8fe0c2ece2620c71b2556b97f93e784c2d3f7c320b98bf35338e6aed/linux-firmware-20261019.tar.xz",
+      "filename": "linux-firmware-20261019.tar.xz",
       "feed": "https://release-monitoring.org/project/141464",
-      "sha512": "2ef755194eb022e539aa677474ca5c6c8c3616b3302ebc14e1698c62ccb6ba6f8149e507b46c2a0563297c53502defb892ce4d37eb02646d99d955ae899eebe7"
+      "sha512": "725bfcc57def709e43dcd89683e1a663c2d221e3d34da58ffcbf8af3b9c6da2b763739ec8fe0c2ece2620c71b2556b97f93e784c2d3f7c320b98bf35338e6aed"
     },
     {
       "name": "livesys-scripts",
@@ -6904,6 +6904,17 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/tcpdump/tcpdump-4.99.6.tar.xz/sha512/2ab6b7e413e321d387acb3e3380cced6653d0935a557293ca21c975d120fc8de24457450ac761523855bbbbfc37d36eb4bba4cf6d0d85df813d689610fbc2a6b/tcpdump-4.99.6.tar.xz"
       ]
+    },
+    {
+      "name": "tealdeer",
+      "version": "1.8.1",
+      "filename": "tealdeer-1.8.1-vendored.tar.xz",
+      "sha512": "a9e63492207c2541bcef855c603f2925a4bacf35eb8979fe79b48f03e36bfe3269eb2b246328ccc3b4fdbcd0b3d8a5b3571b20b46ffd105dda26272ed7f4e911",
+      "generate": {
+        "script": "tools/generated_sources.py",
+        "input": "https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.8.1.tar.gz (sha512-pinned) and every crates.io crate its Cargo.lock pins (sha256-pinned by Cargo.lock)",
+        "method": "add vendor/<crate>-<version> for each Cargo.lock crate with .cargo-checksum.json, as cargo vendor --versioned-dirs lays it out, and repack deterministically as tealdeer-1.8.1-vendored.tar.xz"
+      }
     },
     {
       "name": "tecla",
